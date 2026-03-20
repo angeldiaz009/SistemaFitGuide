@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: linear-gradient(to bottom right, #E4F2E7, #93BFB7);;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="omr.uacm.sistemafitguide.controlador.PantallaInicioController">
+   <children>
+      <Label layoutX="281.0" layoutY="28.0" text="¡Bienvenido al sistema FitGuide!">
+         <font>
+            <Font name="Carlito Bold" size="24.0" />
+         </font>
+      </Label>
+      <Pane prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to bottom, #2D3E40, #387373);;">
+         <children>
+            <Label layoutX="-148.0" layoutY="149.0" prefHeight="200.0" prefWidth="497.0" rotate="-90.0" text="    FitGuide" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="71.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <Pane layoutX="200.0" layoutY="400.0" prefHeight="200.0" prefWidth="701.0" style="-fx-background-color: #387373;">
+         <children>
+            <Button fx:id="btnEmpezar" layoutX="109.0" layoutY="70.0" mnemonicParsing="false" onAction="#accionEmpezar" style="-fx-background-color: #FAB17F;" text="Empezar" visible="false">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane layoutX="281.0" layoutY="87.0" prefHeight="264.0" prefWidth="339.0" style="-fx-background-color: #387373;">
+         <children>
+            <Label layoutX="14.0" layoutY="21.0" prefHeight="23.0" prefWidth="119.0" style="-fx-background-color: #2D3E40;" text="         Nombre:" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtNombre" layoutX="151.0" layoutY="20.0" promptText="Nombre Usuario" />
+            <Label layoutX="14.0" layoutY="80.0" prefHeight="26.0" prefWidth="119.0" style="-fx-background-color: #2D3E40;" text="      Contraseña:" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            <VBox layoutX="2.0" layoutY="159.0" prefHeight="105.0" prefWidth="339.0" spacing="15.0">
+               <children>
+                  <VBox alignment="CENTER" layoutX="45.0" layoutY="130.0" prefWidth="250.0" spacing="15.0">
+                     <children>
+                        <Button fx:id="btnIniciarSeccion" mnemonicParsing="false" prefHeight="45.0" prefWidth="250.0" styleClass="boton-oscuro" stylesheets="@../styles/estilos.css" text="Iniciar Sesión" />
+                        <Button fx:id="btnRegistrarme" mnemonicParsing="false" prefHeight="45.0" prefWidth="250.0" styleClass="boton-oscuro" stylesheets="@../styles/estilos.css" text="Registrarme" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <PasswordField fx:id="txtfielContraseña" layoutX="151.0" layoutY="80.0" promptText="Contraseña Usuario" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

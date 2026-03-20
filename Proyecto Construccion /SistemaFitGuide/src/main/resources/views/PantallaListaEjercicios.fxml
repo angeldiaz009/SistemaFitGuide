@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="600.0" prefWidth="900.0" styleClass="fondo-claro" stylesheets="@../styles/estilos.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="omr.uacm.sistemafitguide.controlador.PantallaListaEjerciciosController">
+   <children>
+
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" spacing="30.0" styleClass="banner-teal">
+         <padding>
+            <Insets left="40.0" right="40.0" />
+         </padding>
+         <children>
+            <Label style="-fx-text-fill: white; -fx-font-size: 26px; -fx-font-weight: bold;" text="Selecciona tu Entrenamiento" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Label style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;" text="Nivel Global:" />
+            <ComboBox fx:id="comboNivel" prefWidth="150.0" style="-fx-font-size: 16px;" />
+         </children>
+      </HBox>
+
+      <HBox alignment="CENTER" spacing="30.0" VBox.vgrow="ALWAYS">
+         <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </padding>
+         <children>
+
+            <StackPane maxWidth="260.0" styleClass="tarjeta-entrenamiento" HBox.hgrow="ALWAYS">
+               <children>
+                  <ImageView fitHeight="400.0" fitWidth="260.0" preserveRatio="false">
+                     <image><Image url="@../imagenes/hombrelagartijabrazo.jpeg" /></image>
+                     <effect><GaussianBlur radius="8.0" /></effect>
+                  </ImageView>
+                  <VBox alignment="TOP_CENTER" spacing="20.0" styleClass="overlay-tarjeta">
+                     <padding><Insets bottom="30.0" left="20.0" right="20.0" top="40.0" /></padding>
+                     <children>
+                        <Label styleClass="titulo-entrenamiento" text="Brazo" />
+                        <Label styleClass="texto-entrenamiento" wrapText="true" text="Desarrolla fuerza y volumen en bíceps y tríceps con rutinas enfocadas en el tren superior." />
+                        <Region VBox.vgrow="ALWAYS" />
+                        <Button mnemonicParsing="false" onAction="#iniciarBrazo" prefHeight="45.0" prefWidth="180.0" styleClass="boton-entrenamiento" text=" Empezar!" />
+                     </children>
+                  </VBox>
+               </children>
+            </StackPane>
+
+            <StackPane maxWidth="260.0" styleClass="tarjeta-entrenamiento" HBox.hgrow="ALWAYS">
+               <children>
+                  <ImageView fitHeight="400.0" fitWidth="260.0" preserveRatio="false">
+                     <image><Image url="@../imagenes/hombreabdominalesabdominal.jpeg" /></image>
+                     <effect><GaussianBlur radius="8.0" /></effect>
+                  </ImageView>
+                  <VBox alignment="TOP_CENTER" spacing="20.0" styleClass="overlay-tarjeta">
+                     <padding><Insets bottom="30.0" left="20.0" right="20.0" top="40.0" /></padding>
+                     <children>
+                        <Label styleClass="titulo-entrenamiento" text="Abdomen" />
+                        <Label styleClass="texto-entrenamiento" wrapText="true" text="Fortalece tu abdomen, mejora tu postura y marca el  área abdominal con alta intensidad." />
+                        <Region VBox.vgrow="ALWAYS" />
+                        <Button mnemonicParsing="false" onAction="#iniciarAbdomen" prefHeight="45.0" prefWidth="180.0" styleClass="boton-entrenamiento" text=" Empezar!" />
+                     </children>
+                  </VBox>
+               </children>
+            </StackPane>
+
+            <StackPane maxWidth="260.0" styleClass="tarjeta-entrenamiento" HBox.hgrow="ALWAYS">
+               <children>
+                  <ImageView fitHeight="400.0" fitWidth="260.0" preserveRatio="false">
+                     <image><Image url="@../imagenes/hombresentadillapierna.jpeg" /></image>
+                     <effect><GaussianBlur radius="8.0" /></effect>
+                  </ImageView>
+                  <VBox alignment="TOP_CENTER" spacing="20.0" styleClass="overlay-tarjeta">
+                     <padding><Insets bottom="30.0" left="20.0" right="20.0" top="40.0" /></padding>
+                     <children>
+                        <Label styleClass="titulo-entrenamiento" text="Pierna" />
+                        <Label styleClass="texto-entrenamiento" wrapText="true" text="Potencia el tren inferior. Trabaja cuádriceps, isquiotibiales y glúteos al máximo." />
+                        <Region VBox.vgrow="ALWAYS" />
+                        <Button mnemonicParsing="false" onAction="#iniciarPierna" prefHeight="45.0" prefWidth="180.0" styleClass="boton-entrenamiento" text=" Empezar!" />
+                     </children>
+                  </VBox>
+               </children>
+            </StackPane>
+
+         </children>
+      </HBox>
+   </children>
+</VBox>

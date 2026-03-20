@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="600.0" prefWidth="900.0" spacing="30.0" styleClass="fondo-claro" stylesheets="@../styles/estilos.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="omr.uacm.sistemafitguide.controlador.PantallaEjecucionController">
+    <padding>
+        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+    </padding>
+    <children>
+        <Label fx:id="lblTitulo" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #2D3E40;" text="Cargando rutina..." />
+        <VBox alignment="CENTER" spacing="20.0" style="-fx-background-color: white; -fx-background-radius: 20px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 15, 0, 0, 5);" VBox.vgrow="ALWAYS">
+            <padding>
+                <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+            </padding>
+            <children>
+                <Label fx:id="lblNombreEjercicio" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #387373;" text="Nombre del Ejercicio" wrapText="true" />
+                <Label fx:id="lblDescripcion" style="-fx-font-size: 20px; -fx-text-fill: #555555; -fx-text-alignment: center;" text="Descripción detallada del ejercicio..." wrapText="true" />
+            </children>
+        </VBox>
+        <Button mnemonicParsing="false" onAction="#regresarInicio" prefHeight="50.0" prefWidth="331.0" styleClass="boton-oscuro" text="¡Terminar y Regresar!" />
+    </children>
+</VBox>
