@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package omr.uacm.sistemafitguide.controlador;
 
 import java.io.IOException;
@@ -10,45 +6,47 @@ import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
+import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import omr.uacm.sistemafitguide.App;
+import omr.uacm.sistemafitguide.modelo.UsuarioDAO;
 
-/**
- * FXML Controller class
- *
- * @author MiguelDiaz
- */
 public class PantallaInicioController implements Initializable {
 
-    @FXML
-    private Button btnEmpezar;
-    @FXML
-    private TextField txtNombre;
-    @FXML
-    private Button btnIniciarSecion;
-    @FXML
-    private Button btnRegistrarme;
-    @FXML
-    private PasswordField txtfielContraseña;
+    @FXML private TextField txtNombre;
+    @FXML private PasswordField txtContrasena; // ¡Libre de la letra Ñ!
 
-    /**
-     * Initializes the controller class.
-     */
-    
-  @Override
+    @Override
     public void initialize(URL url, ResourceBundle rb) {
+        // Inicialización vacía
     }
 
     @FXML
-    private void accionIniciarSeccion() throws IOException{
-        App.setRoot("PantallaCargando");
-    } 
+    private void accionIniciarSeccion() throws IOException {
+        String nombre = txtNombre.getText();
+        String contrasena = txtContrasena.getText();
 
-    @FXML
-    private void accionEmpezar() throws IOException {
-        App.setRoot("PantallaListaEjercicios"); 
+        // 1. Validamos que no intenten entrar con los campos vacíos
+        if (nombre == null || nombre.trim().isEmpty() || contrasena == null || contrasena.trim().isEmpty()) {
+            Alert alerta = new Alert(Alert.AlertType.WARNING, "Por favor, ingresa tu usuario y contraseña.");
+            alerta.showAndWait();
+            return;
+        }
+
+        // 2. Vamos a la Base de Datos a preguntar por este usuario
+        UsuarioDAO dao = new UsuarioDAO();
+        boolean accesoConcedido = dao.validarLogin(nombre, contrasena);
+
+        // 3. Decidimos si lo dejamos pasar o le cerramos la puerta
+        if (accesoConcedido) {
+            System.out.println("Acceso concedido para: " + nombre);
+            App.setRoot("PantallaCargando");
+        } else {
+            System.out.println("Intento de acceso fallido para: " + nombre);
+            Alert alerta = new Alert(Alert.AlertType.ERROR, "Usuario o contraseña incorrectos. Si no tienes cuenta, regístrate primero.");
+            alerta.showAndWait();
+        }
     }
 
     @FXML

@@ -21,7 +21,7 @@
          </children></Pane>
       <Pane layoutX="200.0" layoutY="400.0" prefHeight="200.0" prefWidth="701.0" style="-fx-background-color: #387373;">
          <children>
-            <Button fx:id="btnEmpezar" layoutX="109.0" layoutY="70.0" mnemonicParsing="false" onAction="#accionEmpezar" style="-fx-background-color: #FAB17F;" text="Empezar" visible="false">
+            <Button fx:id="btnEmpezar" layoutX="109.0" layoutY="70.0" mnemonicParsing="false" onAction="#accionIniciarSeccion" style="-fx-background-color: #FAB17F;" text="Empezar" visible="false">
                <font>
                   <Font size="27.0" />
                </font>
@@ -44,13 +44,13 @@
                <children>
                   <VBox alignment="CENTER" layoutX="45.0" layoutY="130.0" prefWidth="250.0" spacing="15.0">
                      <children>
-                        <Button fx:id="btnIniciarSeccion" mnemonicParsing="false" prefHeight="45.0" prefWidth="250.0" styleClass="boton-oscuro" stylesheets="@../styles/estilos.css" text="Iniciar Sesión" />
-                        <Button fx:id="btnRegistrarme" mnemonicParsing="false" prefHeight="45.0" prefWidth="250.0" styleClass="boton-oscuro" stylesheets="@../styles/estilos.css" text="Registrarme" />
+                        <Button fx:id="btnIniciarSeccion" mnemonicParsing="false" onAction="#accionIniciarSeccion" prefHeight="45.0" prefWidth="250.0" styleClass="boton-oscuro" stylesheets="@../styles/estilos.css" text="Iniciar Sesión" />
+                        <Button fx:id="btnRegistrarme" mnemonicParsing="false" onAction="#accionRegistrarme" prefHeight="45.0" prefWidth="250.0" styleClass="boton-oscuro" stylesheets="@../styles/estilos.css" text="Registrarme" />
                      </children>
                   </VBox>
                </children>
             </VBox>
-            <PasswordField fx:id="txtfielContraseña" layoutX="151.0" layoutY="80.0" promptText="Contraseña Usuario" />
+            <PasswordField fx:id="txtContrasena" layoutX="151.0" layoutY="80.0" promptText="Contraseña Usuario" />
          </children>
       </Pane>
    </children>
